@@ -1,0 +1,36 @@
+PODS:
+  - Expecta (0.2.4)
+  - Foursquare-API-v2 (1.4.7)
+  - KIF (3.0.8):
+    - KIF/XCTest
+  - KIF/XCTest (3.0.8)
+  - OHHTTPStubs (3.1.6):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/Core (3.1.6)
+  - Specta (0.3.0.beta1)
+  - SVProgressHUD (1.0)
+  - Swizzlean (0.1.2)
+
+DEPENDENCIES:
+  - Expecta (~> 0.2.4)
+  - Foursquare-API-v2 (~> 1.4.2)
+  - KIF (~> 3.0)
+  - OHHTTPStubs
+  - Specta (from `git@github.com:specta/specta.git`)
+  - SVProgressHUD
+  - Swizzlean (~> 0.1.1)
+
+EXTERNAL SOURCES:
+  Specta:
+    :git: git@github.com:specta/specta.git
+
+SPEC CHECKSUMS:
+  Expecta: 112bcafa2304ee0f3c5e586505f24555a47b25d5
+  Foursquare-API-v2: 97ce6ee55f7ea871ceec0255bba50845551b51c3
+  KIF: 2db5e8cf59136dd1267d49cca0d55883389b09d3
+  OHHTTPStubs: 6781373b69e0a67b27239799f11764d0fbefac55
+  Specta: 63e8ac8e07db6675c7096d37f77a266a1be4c02d
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  Swizzlean: e389af392d2e1bc79757f00c195eddc2a94fdf20
+
+COCOAPODS: 0.34.4
