@@ -128,15 +128,17 @@ git diff --name-status master..advancedStarterCode
 
 If you do not see the storyboard file in the list, you know these files are in fact, the same. In this example, you should see the storyboard file, among many others.
 
-2) Now look at the storyboards, so that you know what to expect. Switch branches to `advancedStarterCode` to take a look at the storyboard you are about to merge into master.
+2) Now look at the storyboards, so that you know what to expect. Switch branches to `advancedStarterCode` to take a look at the storyboard you are about to merge into master. 
 
-3) Based on what you see, make a call - which storyboard would you rather move forward with? The one in your branch (`--ours`) or the one in `advancedStarterCode` you are about to merge (`--theirs`)? Once you git merge, you will choose to `git checkout --theirs` or `--ours` depending on your answer! Don't forget to add the filename to the command in terminal. So in total, that is:
+3) Based on what you see, make a call - which storyboard would you rather move forward with? The one in your branch (`--ours`) or the one in `advancedStarterCode` you are about to merge (`--theirs`)? 
+
+4) Once you git merge (don't forget this step or read to quickly or you will definitely miss it), you will choose to `git checkout --theirs` or `--ours` depending on your answer! Don't forget to add the filename to the command in terminal. So in total, that is:
 
 ```
-git checkout --theirs FourSquare/FourSquare/Base.lproj/Main.storyboard
+git checkout --theirs objc-FourSquare/Main.storyboard
 ```
 
-4) Now go into the project and if you need to, manually update the storyboard to reflect anything from your version. (In this case, there isn't any manual storyboard updating necessary.)
+5) Now go into the project and if you need to, manually update the storyboard to reflect anything from your version. (In this case, there isn't any manual storyboard updating necessary.)
 
 
 ##Getting started
