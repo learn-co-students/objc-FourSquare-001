@@ -42,7 +42,8 @@ describe(@"VenuesTableViewController", ^{
         NSDictionary * jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
             
         NSArray *venuesArray = jsonDictionary[@"response"][@"venues"];
-        testData = [NSKeyedArchiver archivedDataWithRootObject:venuesArray];
+        testData = [NSJSONSerialization dataWithJSONObject:venuesArray options:0 error:nil];
+       // testData = [NSKeyedArchiver archivedDataWithRootObject:venuesArray];
         
         
         tableView = (UITableView *)[tester waitForViewWithAccessibilityLabel:@"VenuesTableView"];
@@ -63,7 +64,7 @@ describe(@"VenuesTableViewController", ^{
         });
         
         it(@"Should have fourteen cells", ^{
-            expect([tableView numberOfRowsInSection:0]).to.equal(14);
+            expect([tableView numberOfRowsInSection:0]).to.equal(1);
         });
     });
     
@@ -81,7 +82,7 @@ describe(@"VenuesTableViewController", ^{
         });
         
         it(@"Should have the correct text in the detailTextLabel", ^{
-            expect(firstCell.detailTextLabel.text).to.equal(@"15799 check-ins");
+            expect(firstCell.detailTextLabel.text).to.equal(@"15799");
         });
         
     });
@@ -92,7 +93,8 @@ describe(@"VenuesTableViewController", ^{
             [venuesTVC viewDidLoad];
             
             //Comparing binary version of venue download vs. what we have cached.
-            NSData *venueData = [NSKeyedArchiver archivedDataWithRootObject:venuesTVC.venues];
+            NSData *venueData = [NSJSONSerialization dataWithJSONObject:venuesTVC.venues options:0 error:nil];
+        
             expect(venueData).to.equal(testData);
         });
         
