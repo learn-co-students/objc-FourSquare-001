@@ -8,6 +8,10 @@
 
 #import "VenuesTableViewController.h"
 #import <Foursquare-API-v2/Foursquare2.h>
+#import "Venue.h"
+#import "Location.h"
+#import "VenueDetailViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface VenuesTableViewController ()
 
@@ -29,20 +33,20 @@
 {
     [super viewDidAppear:animated];
     
-    [Foursquare2 venueSearchNearByLatitude:@40.7050
-                                 longitude:@-74.0136
-                                     query:@"Mexican"
+    [Foursquare2 venueSearchNearByLatitude:self.currentLatitude
+                                 longitude:self.currentLongitude
+                                     query:self.queryString
                                      limit:@100 // We'll allow 100 results
                                     intent:intentBrowse
-                                    radius:@1500
+                                    radius:self.radiusDistance
                                 categoryId:nil
                                   callback:^(BOOL success, id result) {
                                       
+                                      [SVProgressHUD dismiss];
+                                      
                                       self.venues = [[NSMutableArray alloc] init];
-                    
-                                      for (NSDictionary *venue in result[@"response"][@"venues"] ) {
-                                          [self.venues addObject:venue];
-                                      }
+                                      
+                                      [self.venues addObjectsFromArray:[Venue venuesWithVenueDictionaries:result[@"response"][@"venues"]]];
                                       
                                       [self.tableView reloadData];
                                   }];
@@ -67,12 +71,22 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BasicCell" forIndexPath:indexPath];
     
-    NSDictionary *venue = self.venues[indexPath.row];
+    Venue *venue = self.venues[indexPath.row];
     
-    cell.textLabel.text = venue[@"name"];
-    cell.detailTextLabel.text = [venue[@"stats"][@"checkinsCount"] stringValue];
+    cell.textLabel.text = venue.name;
     return cell;
 
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    VenueDetailViewController *venuesDetailViewController = [segue destinationViewController];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    venuesDetailViewController.venue = self.venues[indexPath.row];
+    
 }
 
 @end

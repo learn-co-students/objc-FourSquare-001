@@ -12,4 +12,9 @@
 
 @property (strong, nonatomic) NSMutableArray *venues;
 
+@property (strong, nonatomic) NSString *queryString;
+@property (strong, nonatomic) NSNumber *radiusDistance;
+@property (strong, nonatomic) NSNumber *currentLatitude;
+@property (strong, nonatomic) NSNumber *currentLongitude;
+
 @end
