@@ -265,7 +265,7 @@ Displays the tapped Venue's details.
 
 ###Location 
 ```objc
-+ (NSArray *)locationsWithLocaitons:(NSArray *)locations; // takes an Array of Location dictionaries and returns an array of Location objects 
++ (NSArray *)locationsWithLocations:(NSArray *)locations; // takes an Array of Location dictionaries and returns an array of Location objects 
 ```
 
 ###Venue 
