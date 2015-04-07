@@ -261,7 +261,7 @@ Displays the tapped Venue's details.
 
 * Check out SVProgress HUD.  Optimally, you'll show a ProgressHUD as soon as your API call begins and dismiss the HUD after the call completes.  You can install SVProgressHUD via CocoaPods.  
 
-* Check out `CLLocation` and [check this tutorial out](http://www.appcoda.com/how-to-get-current-location-iphone-user/)! Get the user's current location instead of asking them for one. This is outside of the scope of our regular lessons, but it may come in handy someday!
+* Check out `CLLocation` and [check this StackOverflow out to see how to implement current location in iOS8](http://stackoverflow.com/questions/26134641/how-to-get-current-location-lat-long-in-ios-8)! Get the user's current location instead of asking them for one. This is outside of the scope of our regular lessons, but it may come in handy someday!
 
 ###Location 
 ```objc
