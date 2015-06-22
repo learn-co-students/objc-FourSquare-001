@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C4AEC005-97B8-448F-9975-9B2E696879DB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>objc-Foursquare</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3DEA1B1A4608B499B96A17ED2A1964F90F8E784C</key>
+		<string>github.com:learn-co-curriculum/objc-FourSquare.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>objc-Foursquare.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3DEA1B1A4608B499B96A17ED2A1964F90F8E784C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:learn-co-curriculum/objc-FourSquare.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3DEA1B1A4608B499B96A17ED2A1964F90F8E784C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3DEA1B1A4608B499B96A17ED2A1964F90F8E784C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>objc-FourSquare</string>
+		</dict>
+	</array>
+</dict>
+</plist>
