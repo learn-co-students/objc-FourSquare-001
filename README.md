@@ -1,7 +1,4 @@
----
-  tags: tutorial, intermediate, CocoaPods, Frameworks, Blocks, Multi-threading
-  languages: objc
----
+
 
 Cocoa Pods and Blocks
 =========
