@@ -4,14 +4,26 @@ PODS:
   - KIF (3.3.0):
     - KIF/Core (= 3.3.0)
   - KIF/Core (3.3.0)
-  - OHHTTPStubs (4.0.2)
+  - OHHTTPStubs (4.3.0):
+    - OHHTTPStubs/Default (= 4.3.0)
+  - OHHTTPStubs/Core (4.3.0)
+  - OHHTTPStubs/Default (4.3.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (4.3.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (4.3.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (4.3.0)
   - Specta (1.0.4)
   - SVProgressHUD (1.1.3)
   - Swizzlean (0.2.0)
 
 DEPENDENCIES:
   - Expecta (~> 1.0)
-  - Foursquare-API-v2 (~> 1.4)
+  - Foursquare-API-v2 (~> 1.4.8)
   - KIF (~> 3.3)
   - OHHTTPStubs
   - Specta (~> 1.0)
@@ -22,7 +34,7 @@ SPEC CHECKSUMS:
   Expecta: 9d1bff6c8b0eeee73a166a2ee898892478927a15
   Foursquare-API-v2: dedba546a2048dc66dc444e9784fc5f9c27f81d9
   KIF: 0a82046d06f3648799cac522d2d0f7934214caac
-  OHHTTPStubs: dbd1957d414659783e07b49c961940b7564c23d9
+  OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
   Specta: 69bb134672aae190a1379ff91df07dad8dd1f869
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   Swizzlean: 6ef3e5a33063b7cd99dc39f8c55164dc55d9a021
