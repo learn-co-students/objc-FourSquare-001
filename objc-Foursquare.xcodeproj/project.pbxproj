@@ -27,6 +27,8 @@
 		31FE550519F69FD7002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
 		31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
 		31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550A19F6F81A002BA561 /* Main.storyboard */; };
+		31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
+		31FE550919F6F6F4002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550819F6F6F4002BA561 /* Main.storyboard */; };
 		B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */; };
 		F955FE3B74C32A86A302243C /* libPods-objc-FoursquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,7 @@
 		31FE54FC19F69765002BA561 /* VenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewController.h; sourceTree = "<group>"; };
 		31FE54FD19F69765002BA561 /* VenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewController.m; sourceTree = "<group>"; };
 		31FE550A19F6F81A002BA561 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		31FE550819F6F6F4002BA561 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3D0C3F6740B297107517A903 /* Pods-objc-Foursquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-Foursquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-Foursquare/Pods-objc-Foursquare.release.xcconfig"; sourceTree = "<group>"; };
 		88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-Foursquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8E1DAB8113FDF8A379979E /* Pods-objc-FoursquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-FoursquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-FoursquareTests/Pods-objc-FoursquareTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 				31D1116919F5BAE3003E7B45 /* AppDelegate.m */,
 				31FE550319F6976B002BA561 /* Model */,
 				31FE550419F69776002BA561 /* View Controllers */,
+				31FE550819F6F6F4002BA561 /* Main.storyboard */,
 				31D1117119F5BAE3003E7B45 /* Images.xcassets */,
 				31D1117319F5BAE3003E7B45 /* LaunchScreen.xib */,
 				31D1116419F5BAE3003E7B45 /* Supporting Files */,
@@ -222,6 +226,7 @@
 				31D1115E19F5BAE3003E7B45 /* Frameworks */,
 				31D1115F19F5BAE3003E7B45 /* Resources */,
 				645E8C88F1522B49DADB3EB8 /* Copy Pods Resources */,
+				DB76D01F601DC49EB590047F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +246,7 @@
 				31D1117719F5BAE3003E7B45 /* Frameworks */,
 				31D1117819F5BAE3003E7B45 /* Resources */,
 				5F32F1FAD47C3A4B5B1EE442 /* Copy Pods Resources */,
+				B19F7854CDA9F22F4B80858C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,7 +264,7 @@
 		31D1115919F5BAE3003E7B45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Zachary Drossman";
 				TargetAttributes = {
 					31D1116019F5BAE3003E7B45 = {
@@ -299,6 +305,7 @@
 				31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */,
 				31FE550519F69FD7002BA561 /* foursquareResultsStub.json in Resources */,
 				31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */,
+				31FE550919F6F6F4002BA561 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +364,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B19F7854CDA9F22F4B80858C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-objc-FoursquareTests/Pods-objc-FoursquareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB76D01F601DC49EB590047F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-objc-Foursquare/Pods-objc-Foursquare-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F91B401A4D0C425039469D49 /* Check Pods Manifest.lock */ = {
@@ -446,6 +483,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -507,6 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "objc-Foursquare/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -518,6 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "objc-Foursquare/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -537,6 +577,7 @@
 				);
 				INFOPLIST_FILE = "objc-FoursquareTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/objc-Foursquare.app/objc-Foursquare";
 			};
@@ -553,6 +594,7 @@
 				);
 				INFOPLIST_FILE = "objc-FoursquareTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/objc-Foursquare.app/objc-Foursquare";
 			};

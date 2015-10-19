@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>BB4D41D1-0D7D-42C4-BB98-C485CECF7C26</string>
+=======
+	<string>C4AEC005-97B8-448F-9975-9B2E696879DB</string>
+>>>>>>> master
 	<key>IDESourceControlProjectName</key>
 	<string>objc-Foursquare</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
