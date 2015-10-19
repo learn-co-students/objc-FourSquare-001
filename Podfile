@@ -5,7 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target "objc-Foursquare" do
 
-  pod 'Foursquare-API-v2', '~> 1.4'
+  pod 'Foursquare-API-v2', '~> 1.4.8'
   pod 'OHHTTPStubs'
   pod 'SVProgressHUD'
 

@@ -11,25 +11,22 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Do not alter ////////////////////////////////////////////////////////////
     if (isRunningTests()) {
-        
         [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-            if ([request.URL.host isEqualToString:@"api.foursquare.com"]&&[request.URL.path isEqualToString:@"/v2/venues/search"])
-            {
+            if ([request.URL.host isEqualToString:@"api.foursquare.com"]&&[request.URL.path isEqualToString:@"/v2/venues/search"]) {
                 return YES;
-            }
-            else
-            {
+            } else {
                 return NO;
             }
         } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-            return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"foursquareResultsStub.json", nil) statusCode:200 headers:@{@"Content-Type": @"application/json"}];
+            return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"foursquareResultsStub.json", [NSBundle mainBundle]) statusCode:200 headers:@{@"Content-Type": @"application/json"}];
         }];
-        
-    }
+    } //////////////////////////////////////////////////////////////////////////
     // Override point for customization after application launch.
+    
+    
     return YES;
 }
 							
