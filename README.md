@@ -1,7 +1,7 @@
 
 
-Cocoa Pods and Blocks
-=========
+# Cocoapods and Blocks
+
 
 ## Goals 
 
@@ -17,51 +17,44 @@ Create an app that displays the foursquare venue name and checkinsCount.
 
 CocoPods are awesome! They allow us to add third-party frameworks to our projects with minimal effort while managing versions and dependencies.  
 
-- Install CocoaPods using the CocoaPods link in the links section. 
-- In the root project directory, create a file in Sublime called Podfile.  Add the following code to your Podfile and save. 
+1. Verify that the current version of the Foursquare-API-v2 is included in the project.
+    * In the root project directory, use Sublime to open the Podfile and confirm that the pod is added to the project target:
 
-```
-platform :ios, '7.0'
+    ``` 
+    pod 'Foursquare-API-v2', '~> 1.4.8'
+    ```
+    * Run `pod install` in your terminal to verify that the correct version is installed.
 
-pod 'Foursquare-API-v2', '~> 1.4.2'
-```   
-
-- In Terminal, cd to your projects root directory (the same level as your Podfile)  
-- Run `Pod install` to configure your project for CocoaPods
-
-CocoaPods creates an XCWorkspace file for you.  You'll use this file instead of the xcodeproj file you're used to.  
-
-- Open the xcworkspace file 
-- Time to code 
+2. Since you'll be using Cocoapods, you'll need to work in the xcworkspace from now on so that the pods are visible to your project.
 
 ## FourSquare API Configuration
 
-- Client ID: 4CYIWCSVTU40F1RGDRXIYS1ATQ4TQ2GGXWTRMNW5M3VYPCDW
-- Client Secret: ZYS0F3CJEFAQVXUWOYW5Y4VZYAT3IR0XLM5QZSW4NRZKVRQ4
-- callbackURL: testapp123://foursquare
+- Client ID: `4CYIWCSVTU40F1RGDRXIYS1ATQ4TQ2GGXWTRMNW5M3VYPCDW`
+- Client Secret: `ZYS0F3CJEFAQVXUWOYW5Y4VZYAT3IR0XLM5QZSW4NRZKVRQ4`
+- callbackURL: `testapp123://foursquare`
 - Add the following method to your App Delegate. 
 
 Or, feel free to create your own foursquare account (if you don't already have one) and register your application for on the FourSquare developer website. The callbackURL does not matter (it can really be anything for now), but you will need to get a clientID and clientSecret.
 
 ```objc 
-
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [Foursquare2 handleURL:url];
 }
-
 ``` 
 
 and the following code to your didFinishLaunchingWithOptions: method
 
 ```objc
+// AppDelegate.m
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+	{ ... }
+	// Override point for customization after application launch.
     [Foursquare2 setupFoursquareWithClientId:YOUR_KEY
                       secret:YOUR_SECRET
                  callbackURL:YOUR_CALLBACK_URL]; // You can make this up for now. Use this string @"com.flatironschool"
+    return YES;
 }
-
 ``` 
 
 At this point, our App is configured to make authenticated API calls to the FourSquare API.  There is a ton of magic going on under the hood to allow us to set up communications with the API in just a couple lines of code, but that is the wonderment of CocoaPods; CocoaPods allow complex concepts to be abstracted into simple wrapper classes.  From here on out, we can simply import Foursquare2.h into our classes and use the Foursquare2 cocoapods' methods to make requests from the API.
@@ -272,9 +265,8 @@ Displays the tapped Venue's details.
 ```
 
 ## Links 
-
-  - http://cocoapods.org/ - CocoaPods Homepage 
-  - http://guides.cocoapods.org/using/getting-started.html#getting-started - CocoaPods getting started 
-  - http://guides.cocoapods.org/using/the-podfile.html - CocoaPods Podfile configuration
-  - https://github.com/Constantine-Fry/Foursquare-API-v2 - FourSquare CocoaPod Github page
-  - https://developer.foursquare.com/docs/venues/search - FourSquare API Search Documentation 
+ 
+  - [CocoaPods getting started](http://guides.cocoapods.org/using/getting-started.html#getting-started)
+  - [CocoaPods Podfile configuration](http://guides.cocoapods.org/using/the-podfile.html)
+  - [FourSquare CocoaPod Github page](https://github.com/Constantine-Fry/Foursquare-API-v2)
+  - [FourSquare API Search Documentation](https://developer.foursquare.com/docs/venues/search)

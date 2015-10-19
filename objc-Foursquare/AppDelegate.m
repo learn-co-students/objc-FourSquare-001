@@ -12,30 +12,25 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [Foursquare2 setupFoursquareWithClientId:@"4CYIWCSVTU40F1RGDRXIYS1ATQ4TQ2GGXWTRMNW5M3VYPCDW"
-                                      secret:@"ZYS0F3CJEFAQVXUWOYW5Y4VZYAT3IR0XLM5QZSW4NRZKVRQ4"
-                                 callbackURL:@"testapp123://foursquare"]; // You can make this up for now. Use this string @"com.flatironschool"
-    
+    // Do not alter ////////////////////////////////////////////////////////////
     if (isRunningTests()) {
-        
         [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-            if ([request.URL.host isEqualToString:@"api.foursquare.com"]&&[request.URL.path isEqualToString:@"/v2/venues/search"])
-            {
+            if ([request.URL.host isEqualToString:@"api.foursquare.com"]&&[request.URL.path isEqualToString:@"/v2/venues/search"]) {
                 return YES;
-            }
-            else
-            {
+            } else {
                 return NO;
             }
         } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
             return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"foursquareResultsStub.json", [NSBundle mainBundle]) statusCode:200 headers:@{@"Content-Type": @"application/json"}];
         }];
-        
-    }
+    } //////////////////////////////////////////////////////////////////////////
     // Override point for customization after application launch.
+    
+    [Foursquare2 setupFoursquareWithClientId:@"4CYIWCSVTU40F1RGDRXIYS1ATQ4TQ2GGXWTRMNW5M3VYPCDW"
+                                      secret:@"ZYS0F3CJEFAQVXUWOYW5Y4VZYAT3IR0XLM5QZSW4NRZKVRQ4"
+                                 callbackURL:@"testapp123://foursquare"]; // You can make this up for now. Use this string @"com.flatironschool"
+    
     return YES;
 }
 
