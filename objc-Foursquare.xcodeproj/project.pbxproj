@@ -26,8 +26,6 @@
 		31FE550219F69765002BA561 /* VenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE54FD19F69765002BA561 /* VenuesTableViewController.m */; };
 		31FE550519F69FD7002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
 		31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
-		31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550A19F6F81A002BA561 /* Main.storyboard */; };
-		31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
 		31FE550919F6F6F4002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550819F6F6F4002BA561 /* Main.storyboard */; };
 		B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */; };
 		F955FE3B74C32A86A302243C /* libPods-objc-FoursquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */; };
@@ -71,7 +69,6 @@
 		31FE54DA19F694E4002BA561 /* VenuesTableViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewControllerSpec.m; sourceTree = "<group>"; };
 		31FE54FC19F69765002BA561 /* VenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewController.h; sourceTree = "<group>"; };
 		31FE54FD19F69765002BA561 /* VenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewController.m; sourceTree = "<group>"; };
-		31FE550A19F6F81A002BA561 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		31FE550819F6F6F4002BA561 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3D0C3F6740B297107517A903 /* Pods-objc-Foursquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-Foursquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-Foursquare/Pods-objc-Foursquare.release.xcconfig"; sourceTree = "<group>"; };
 		88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-Foursquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +121,6 @@
 		31D1116319F5BAE3003E7B45 /* objc-Foursquare */ = {
 			isa = PBXGroup;
 			children = (
-				31FE550A19F6F81A002BA561 /* Main.storyboard */,
 				31D1116819F5BAE3003E7B45 /* AppDelegate.h */,
 				31D1116919F5BAE3003E7B45 /* AppDelegate.m */,
 				31FE550319F6976B002BA561 /* Model */,
@@ -304,7 +300,6 @@
 				31D1117219F5BAE3003E7B45 /* Images.xcassets in Resources */,
 				31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */,
 				31FE550519F69FD7002BA561 /* foursquareResultsStub.json in Resources */,
-				31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */,
 				31FE550919F6F6F4002BA561 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

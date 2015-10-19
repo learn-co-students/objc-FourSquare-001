@@ -31,7 +31,7 @@
                 return NO;
             }
         } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-            return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"foursquareResultsStub.json", nil) statusCode:200 headers:@{@"Content-Type": @"application/json"}];
+            return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"foursquareResultsStub.json", [NSBundle mainBundle]) statusCode:200 headers:@{@"Content-Type": @"application/json"}];
         }];
         
     }

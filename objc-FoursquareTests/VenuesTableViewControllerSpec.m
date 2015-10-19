@@ -34,6 +34,8 @@ describe(@"VenuesTableViewController", ^{
                 
         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
         appDelegate.window.rootViewController = venuesTVC;
+        
+
       
         NSString *test = OHPathForFileInBundle(@"foursquareResultsStub.json", nil);
         
@@ -45,12 +47,13 @@ describe(@"VenuesTableViewController", ^{
         testData = [NSJSONSerialization dataWithJSONObject:venuesArray options:0 error:nil];
        // testData = [NSKeyedArchiver archivedDataWithRootObject:venuesArray];
         
-        
         tableView = (UITableView *)[tester waitForViewWithAccessibilityLabel:@"VenuesTableView"];
         ip = [NSIndexPath indexPathForRow:0 inSection:0];
         firstCell = [tester waitForCellAtIndexPath:ip inTableViewWithAccessibilityIdentifier:@"VenuesTableView"];
+        
+        
 
-
+        
     });
     
     it(@"should have a venues array property", ^{
