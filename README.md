@@ -270,3 +270,5 @@ Displays the tapped Venue's details.
   - [CocoaPods Podfile configuration](http://guides.cocoapods.org/using/the-podfile.html)
   - [FourSquare CocoaPod Github page](https://github.com/Constantine-Fry/Foursquare-API-v2)
   - [FourSquare API Search Documentation](https://developer.foursquare.com/docs/venues/search)
+
+<a href='https://learn.co/lessons/objc-FourSquare' data-visibility='hidden'>View this lesson on Learn.co</a>
