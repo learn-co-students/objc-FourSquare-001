@@ -10,6 +10,7 @@
 #import "Foursquare2.h"
 #import "VenuesTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "SVProgressHUD.h"
 
 @interface SearchQueryViewController () <CLLocationManagerDelegate>
 @property (nonatomic, strong) IBOutlet UITextField *queryField;
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) IBOutlet UITextField *longitudeField;
 @property (nonatomic, strong) IBOutlet UIButton *searchButton;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSArray <Venue *> *venues;
+@property (nonatomic, strong) CLLocation *currentLocation;
 @end
 
 @implementation SearchQueryViewController
@@ -61,38 +64,48 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    [self.searchButton setTitle:@"Searching..." forState:UIControlStateDisabled];
-    [self.searchButton setEnabled:NO];
-    NSNumber *latitude = [NSNumber numberWithFloat:self.latitudeField.text.floatValue];
-    NSNumber *longitude = [NSNumber numberWithFloat:self.longitudeField.text.floatValue];
-    NSString *query = self.queryField.text;
-    NSNumber *radius = [NSNumber numberWithFloat:self.willingnessToTravelField.text.floatValue];
-    [Foursquare2 venueSearchNearByLatitude:latitude longitude:longitude query:query limit:@100 intent:intentBrowse radius:radius categoryId:nil callback:^(BOOL success, id result) {
-        
-        [self.searchButton setEnabled:YES];
-        
-        if (!success)
-        {
-            NSLog(@"%@", result);
-            return;
-        }
-        
-        VenuesTableViewController *venuesTableViewController = (VenuesTableViewController *)segue.destinationViewController;
-        [venuesTableViewController setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
-        [venuesTableViewController.tableView reloadData];
-    }];
+    VenuesTableViewController *venuesTableViewController = (VenuesTableViewController *)segue.destinationViewController;
+    [venuesTableViewController setVenues:self.venues];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray <CLLocation *> *)locations
 {
-    CLLocation *currentLocation = [locations lastObject];
-    if (!self.latitudeField.text.length) [self.latitudeField setText:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude]];
-    if (!self.longitudeField.text.length) [self.longitudeField setText:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude]];
+    [self setCurrentLocation:[locations lastObject]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"%@", error);
+}
+
+- (IBAction)search:(id)sender
+{
+    [SVProgressHUD show];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        NSNumber *latitude = (self.latitudeField.text.length ? [NSNumber numberWithFloat:self.latitudeField.text.floatValue] : [NSNumber numberWithFloat:self.currentLocation.coordinate.latitude]);
+        NSNumber *longitude = (self.longitudeField.text.length ? [NSNumber numberWithFloat:self.longitudeField.text.floatValue] : [NSNumber numberWithFloat:self.currentLocation.coordinate.longitude]);
+        NSString *query = self.queryField.text;
+        NSNumber *radius = [NSNumber numberWithFloat:self.willingnessToTravelField.text.floatValue];
+        
+        [Foursquare2 venueSearchNearByLatitude:latitude longitude:longitude query:query limit:@100 intent:intentBrowse radius:radius categoryId:nil callback:^(BOOL success, id result) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
+                
+                if (!success)
+                {
+                    NSLog(@"%@", result);
+                    return;
+                }
+                
+                [self setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
+                [self performSegueWithIdentifier:@"segueVenues" sender:self];
+            });
+        }];
+    });
 }
 
 @end

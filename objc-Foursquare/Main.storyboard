@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GKB-Rx-ICS" kind="push" identifier="" id="h4U-gU-1F5"/>
+                                    <action selector="search:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3qz-ua-aub"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="chinese" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxO-14-Wrl">
@@ -80,6 +80,7 @@
                         <outlet property="queryField" destination="WxO-14-Wrl" id="3GZ-Qo-gdC"/>
                         <outlet property="searchButton" destination="iEs-cy-rr7" id="CtI-g8-jID"/>
                         <outlet property="willingnessToTravelField" destination="mOK-mn-y4Q" id="s2l-wk-9pD"/>
+                        <segue destination="GKB-Rx-ICS" kind="push" identifier="segueVenues" id="W21-vh-xJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

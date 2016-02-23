@@ -28,6 +28,7 @@
 		7D136A491C7CA6DE00279D15 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A481C7CA6DE00279D15 /* Location.m */; };
 		7D136A4C1C7CAD1100279D15 /* SearchQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A4B1C7CAD1100279D15 /* SearchQueryViewController.m */; };
 		7D136A4F1C7CAD2A00279D15 /* VenueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A4E1C7CAD2A00279D15 /* VenueDetailViewController.m */; };
+		7D136A511C7CBAD000279D15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D136A501C7CBAD000279D15 /* QuartzCore.framework */; };
 		B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */; };
 		F955FE3B74C32A86A302243C /* libPods-objc-FoursquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		7D136A4B1C7CAD1100279D15 /* SearchQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchQueryViewController.m; sourceTree = "<group>"; };
 		7D136A4D1C7CAD2A00279D15 /* VenueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailViewController.h; sourceTree = "<group>"; };
 		7D136A4E1C7CAD2A00279D15 /* VenueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailViewController.m; sourceTree = "<group>"; };
+		7D136A501C7CBAD000279D15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-Foursquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8E1DAB8113FDF8A379979E /* Pods-objc-FoursquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-FoursquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-FoursquareTests/Pods-objc-FoursquareTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-FoursquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D136A511C7CBAD000279D15 /* QuartzCore.framework in Frameworks */,
 				7D136A431C7BEF5B00279D15 /* CoreLocation.framework in Frameworks */,
 				B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */,
 			);
@@ -195,6 +198,7 @@
 		B73AC9A84C535820D4681B53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D136A501C7CBAD000279D15 /* QuartzCore.framework */,
 				7D136A421C7BEF5B00279D15 /* CoreLocation.framework */,
 				88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */,
 				CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */,
