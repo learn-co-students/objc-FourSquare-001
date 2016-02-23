@@ -10,12 +10,12 @@
 #import "Location.h"
 
 @interface VenueDetailViewController ()
-@property (nonatomic, strong) IBOutlet UILabel *venueID;
-@property (nonatomic, strong) IBOutlet UILabel *address;
-@property (nonatomic, strong) IBOutlet UILabel *city;
-@property (nonatomic, strong) IBOutlet UILabel *state;
-@property (nonatomic, strong) IBOutlet UILabel *postalCode;
-@property (nonatomic, strong) IBOutlet UILabel *crossStreet;
+@property (nonatomic, strong) IBOutlet UILabel *venueIDLabel;
+@property (nonatomic, strong) IBOutlet UILabel *addressLabel;
+@property (nonatomic, strong) IBOutlet UILabel *cityLabel;
+@property (nonatomic, strong) IBOutlet UILabel *stateLabel;
+@property (nonatomic, strong) IBOutlet UILabel *postalCodeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *crossStreetLabel;
 @end
 
 @implementation VenueDetailViewController
@@ -24,12 +24,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.venueID setText:self.venue.venueId];
-    [self.address setText:self.venue.location.address];
-    [self.city setText:self.venue.location.city];
-    [self.state setText:self.venue.location.state];
-    [self.postalCode setText:self.venue.location.postalCode];
-    [self.crossStreet setText:self.venue.location.crossStreet];
+    [self.venueIDLabel setText:self.venue.venueId];
+    [self.addressLabel setText:self.venue.location.address];
+    [self.cityLabel setText:self.venue.location.city];
+    [self.stateLabel setText:self.venue.location.state];
+    [self.postalCodeLabel setText:self.venue.location.postalCode];
+    [self.crossStreetLabel setText:self.venue.location.crossStreet];
 }
 
 - (void)didReceiveMemoryWarning {

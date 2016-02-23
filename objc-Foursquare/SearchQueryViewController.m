@@ -12,10 +12,11 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface SearchQueryViewController () <CLLocationManagerDelegate>
-@property (nonatomic, strong) IBOutlet UITextField *search;
-@property (nonatomic, strong) IBOutlet UITextField *distance;
-@property (nonatomic, strong) IBOutlet UITextField *latitude;
-@property (nonatomic, strong) IBOutlet UITextField *longitude;
+@property (nonatomic, strong) IBOutlet UITextField *queryField;
+@property (nonatomic, strong) IBOutlet UITextField *willingnessToTravelField;
+@property (nonatomic, strong) IBOutlet UITextField *latitudeField;
+@property (nonatomic, strong) IBOutlet UITextField *longitudeField;
+@property (nonatomic, strong) IBOutlet UIButton *searchButton;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
@@ -60,18 +61,15 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([sender isKindOfClass:[UIButton class]])
-    {
-        [sender setTitle:@"Searching..." forState:UIControlStateDisabled];
-        [sender setEnabled:NO];
-    }
-    NSNumber *latitude = [NSNumber numberWithFloat:self.latitude.text.floatValue];
-    NSNumber *longitude = [NSNumber numberWithFloat:self.longitude.text.floatValue];
-    NSString *query = self.search.text;
-    NSNumber *radius = [NSNumber numberWithFloat:self.distance.text.floatValue];
+    [self.searchButton setTitle:@"Searching..." forState:UIControlStateDisabled];
+    [self.searchButton setEnabled:NO];
+    NSNumber *latitude = [NSNumber numberWithFloat:self.latitudeField.text.floatValue];
+    NSNumber *longitude = [NSNumber numberWithFloat:self.longitudeField.text.floatValue];
+    NSString *query = self.queryField.text;
+    NSNumber *radius = [NSNumber numberWithFloat:self.willingnessToTravelField.text.floatValue];
     [Foursquare2 venueSearchNearByLatitude:latitude longitude:longitude query:query limit:@100 intent:intentBrowse radius:radius categoryId:nil callback:^(BOOL success, id result) {
         
-        if ([sender isKindOfClass:[UIButton class]]) [sender setEnabled:YES];
+        [self.searchButton setEnabled:YES];
         
         if (!success)
         {
@@ -81,14 +79,15 @@
         
         VenuesTableViewController *venuesTableViewController = (VenuesTableViewController *)segue.destinationViewController;
         [venuesTableViewController setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
+        [venuesTableViewController.tableView reloadData];
     }];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray <CLLocation *> *)locations
 {
     CLLocation *currentLocation = [locations lastObject];
-    if (!self.latitude.text.length) [self.latitude setText:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude]];
-    if (!self.longitude.text.length) [self.longitude setText:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude]];
+    if (!self.latitudeField.text.length) [self.latitudeField setText:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude]];
+    if (!self.longitudeField.text.length) [self.longitudeField setText:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
