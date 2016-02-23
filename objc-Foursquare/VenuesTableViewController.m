@@ -8,6 +8,7 @@
 
 #import "VenuesTableViewController.h"
 #import "Foursquare2.h"
+#import "VenueDetailViewController.h"
 
 @interface VenuesTableViewController ()
 @end
@@ -84,14 +85,15 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Venue *venue = self.venues[indexPath.row];
+    VenueDetailViewController *venueDetailViewController = (VenueDetailViewController *)segue.destinationViewController;
+    [venueDetailViewController setVenue:venue];
 }
-*/
 
 @end
