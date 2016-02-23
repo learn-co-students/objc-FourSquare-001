@@ -24,6 +24,7 @@
 		7D136A3E1C7BED0000279D15 /* FISPrivateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A3D1C7BED0000279D15 /* FISPrivateInfo.m */; };
 		7D136A411C7BEEB400279D15 /* VenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A401C7BEEB400279D15 /* VenuesTableViewController.m */; };
 		7D136A431C7BEF5B00279D15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D136A421C7BEF5B00279D15 /* CoreLocation.framework */; };
+		31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550A19F6F81A002BA561 /* Main.storyboard */; };
 		B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */; };
 		F955FE3B74C32A86A302243C /* libPods-objc-FoursquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */; };
 /* End PBXBuildFile section */
@@ -56,7 +57,7 @@
 		31FE54D819F694E4002BA561 /* VenueSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueSpec.m; sourceTree = "<group>"; };
 		31FE54D919F694E4002BA561 /* VenuesTableViewControllerAdvancedSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewControllerAdvancedSpec.m; sourceTree = "<group>"; };
 		31FE54DA19F694E4002BA561 /* VenuesTableViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewControllerSpec.m; sourceTree = "<group>"; };
-		31FE550819F6F6F4002BA561 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		31FE550A19F6F81A002BA561 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3D0C3F6740B297107517A903 /* Pods-objc-Foursquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-Foursquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-Foursquare/Pods-objc-Foursquare.release.xcconfig"; sourceTree = "<group>"; };
 		7D136A3C1C7BED0000279D15 /* FISPrivateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISPrivateInfo.h; sourceTree = "<group>"; };
 		7D136A3D1C7BED0000279D15 /* FISPrivateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISPrivateInfo.m; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		31D1116319F5BAE3003E7B45 /* objc-Foursquare */ = {
 			isa = PBXGroup;
 			children = (
+				31FE550A19F6F81A002BA561 /* Main.storyboard */,
 				31D1116819F5BAE3003E7B45 /* AppDelegate.h */,
 				31D1116919F5BAE3003E7B45 /* AppDelegate.m */,
 				7D136A3C1C7BED0000279D15 /* FISPrivateInfo.h */,
@@ -271,7 +273,7 @@
 				31D1117519F5BAE3003E7B45 /* LaunchScreen.xib in Resources */,
 				31D1117219F5BAE3003E7B45 /* Images.xcassets in Resources */,
 				31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */,
-				31FE550919F6F6F4002BA561 /* Main.storyboard in Resources */,
+				31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
