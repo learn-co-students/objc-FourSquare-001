@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#import "Foursquare2.h"
+#import "FISPrivateInfo.h"
 
 @implementation AppDelegate
 
@@ -26,6 +28,9 @@
     } //////////////////////////////////////////////////////////////////////////
     // Override point for customization after application launch.
     
+    [Foursquare2 setupFoursquareWithClientId:FoursquareAPIClientId
+                                      secret:FoursquareAPIClientSecret
+                                 callbackURL:FoursquareAPICallbackURL];
     
     return YES;
 }
@@ -61,6 +66,10 @@ static BOOL isRunningTests(void)
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [Foursquare2 handleURL:url];
 }
 
 @end
