@@ -8,10 +8,8 @@
 
 #import "VenuesTableViewController.h"
 #import "Foursquare2.h"
-#import <CoreLocation/CoreLocation.h>
 
-@interface VenuesTableViewController () <CLLocationManagerDelegate>
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@interface VenuesTableViewController ()
 @end
 
 @implementation VenuesTableViewController
@@ -24,30 +22,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self setLocationManager:[[CLLocationManager alloc] init]];
-    [self.locationManager setDelegate:self];
-    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        NSUInteger code = [CLLocationManager authorizationStatus];
-        
-        if (code == kCLAuthorizationStatusNotDetermined && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
-            
-            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
-                [self.locationManager requestAlwaysAuthorization];
-            }
-            else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                [self.locationManager  requestWhenInUseAuthorization];
-            }
-            else {
-                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
-            }
-        }
-    }
-    
-    [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,26 +93,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray <CLLocation *> *)locations
-{
-    CLLocation *currentLocation = [locations lastObject];
-    [Foursquare2 venueSearchNearByLatitude:[NSNumber numberWithFloat:currentLocation.coordinate.latitude] longitude:[NSNumber numberWithFloat:currentLocation.coordinate.longitude] query:nil limit:@100 intent:intentBrowse radius:@1500 categoryId:nil callback:^(BOOL success, id result) {
-        
-        if (!success)
-        {
-            NSLog(@"%@", result);
-            return;
-        }
-        
-        [self setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
-        [self.tableView reloadData];
-    }];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"%@", error);
-}
 
 @end
