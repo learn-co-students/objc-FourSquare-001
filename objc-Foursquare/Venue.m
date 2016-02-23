@@ -25,9 +25,9 @@
 + (NSArray *)venuesWithVenues:(NSArray *)venues
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:venues.count];
-    for (NSDictionary *venue in venues)
+    for (NSDictionary *venueDictionary in venues)
     {
-        [array addObject:[Venue venueWithVenueDictionary:venue]];
+        [array addObject:[Venue venueWithVenueDictionary:venueDictionary]];
     }
     return array;
 }
@@ -36,7 +36,7 @@
 {
     if (!venueDictionary) return nil;
     
-    return [[Venue alloc] initWithName:<#(NSString *)#> venueId:<#(NSString *)#> location:<#(Location *)#>];
+    return [[Venue alloc] initWithName:venueDictionary[@"name"] venueId:venueDictionary[@"id"] location:[Location locationWithLocationDictionary:venueDictionary[@"location"]]];
 }
 
 @end

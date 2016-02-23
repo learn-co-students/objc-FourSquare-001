@@ -26,6 +26,8 @@
 		7D136A431C7BEF5B00279D15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D136A421C7BEF5B00279D15 /* CoreLocation.framework */; };
 		7D136A461C7CA69F00279D15 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A451C7CA69F00279D15 /* Venue.m */; };
 		7D136A491C7CA6DE00279D15 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A481C7CA6DE00279D15 /* Location.m */; };
+		7D136A4C1C7CAD1100279D15 /* SearchQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A4B1C7CAD1100279D15 /* SearchQueryViewController.m */; };
+		7D136A4F1C7CAD2A00279D15 /* VenueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A4E1C7CAD2A00279D15 /* VenueDetailViewController.m */; };
 		B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */; };
 		F955FE3B74C32A86A302243C /* libPods-objc-FoursquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,10 @@
 		7D136A451C7CA69F00279D15 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		7D136A471C7CA6DE00279D15 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		7D136A481C7CA6DE00279D15 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		7D136A4A1C7CAD1100279D15 /* SearchQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchQueryViewController.h; sourceTree = "<group>"; };
+		7D136A4B1C7CAD1100279D15 /* SearchQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchQueryViewController.m; sourceTree = "<group>"; };
+		7D136A4D1C7CAD2A00279D15 /* VenueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailViewController.h; sourceTree = "<group>"; };
+		7D136A4E1C7CAD2A00279D15 /* VenueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailViewController.m; sourceTree = "<group>"; };
 		88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-Foursquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8E1DAB8113FDF8A379979E /* Pods-objc-FoursquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-FoursquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-FoursquareTests/Pods-objc-FoursquareTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-FoursquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,8 +131,12 @@
 				31D1116919F5BAE3003E7B45 /* AppDelegate.m */,
 				7D136A3C1C7BED0000279D15 /* FISPrivateInfo.h */,
 				7D136A3D1C7BED0000279D15 /* FISPrivateInfo.m */,
+				7D136A4A1C7CAD1100279D15 /* SearchQueryViewController.h */,
+				7D136A4B1C7CAD1100279D15 /* SearchQueryViewController.m */,
 				7D136A3F1C7BEEB400279D15 /* VenuesTableViewController.h */,
 				7D136A401C7BEEB400279D15 /* VenuesTableViewController.m */,
+				7D136A4D1C7CAD2A00279D15 /* VenueDetailViewController.h */,
+				7D136A4E1C7CAD2A00279D15 /* VenueDetailViewController.m */,
 				7D136A441C7CA69F00279D15 /* Venue.h */,
 				7D136A451C7CA69F00279D15 /* Venue.m */,
 				7D136A471C7CA6DE00279D15 /* Location.h */,
@@ -394,8 +404,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D136A4C1C7CAD1100279D15 /* SearchQueryViewController.m in Sources */,
 				7D136A411C7BEEB400279D15 /* VenuesTableViewController.m in Sources */,
 				31D1116A19F5BAE3003E7B45 /* AppDelegate.m in Sources */,
+				7D136A4F1C7CAD2A00279D15 /* VenueDetailViewController.m in Sources */,
 				31D1116719F5BAE3003E7B45 /* main.m in Sources */,
 				7D136A461C7CA69F00279D15 /* Venue.m in Sources */,
 				7D136A491C7CA6DE00279D15 /* Location.m in Sources */,

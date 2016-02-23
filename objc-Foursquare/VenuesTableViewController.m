@@ -8,10 +8,9 @@
 
 #import "VenuesTableViewController.h"
 #import "Foursquare2.h"
-#import <CoreLocation/CoreLocation.h>
+#import "VenueDetailViewController.h"
 
-@interface VenuesTableViewController () <CLLocationManagerDelegate>
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@interface VenuesTableViewController ()
 @end
 
 @implementation VenuesTableViewController
@@ -24,30 +23,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self setLocationManager:[[CLLocationManager alloc] init]];
-    [self.locationManager setDelegate:self];
-    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        NSUInteger code = [CLLocationManager authorizationStatus];
-        
-        if (code == kCLAuthorizationStatusNotDetermined && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
-            
-            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
-                [self.locationManager requestAlwaysAuthorization];
-            }
-            else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                [self.locationManager  requestWhenInUseAuthorization];
-            }
-            else {
-                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
-            }
-        }
-    }
-    
-    [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,9 +45,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NSDictionary *venue = self.venues[indexPath.row];
-    [cell.textLabel setText:venue[@"name"]];
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@", venue[@"stats"][@"checkinsCount"]]];
+    Venue *venue = self.venues[indexPath.row];
+    [cell.textLabel setText:venue.name];
     
     return cell;
 }
@@ -111,35 +85,15 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray <CLLocation *> *)locations
-{
-    CLLocation *currentLocation = [locations lastObject];
-    [Foursquare2 venueSearchNearByLatitude:[NSNumber numberWithFloat:currentLocation.coordinate.latitude] longitude:[NSNumber numberWithFloat:currentLocation.coordinate.longitude] query:nil limit:@100 intent:intentBrowse radius:@1500 categoryId:nil callback:^(BOOL success, id result) {
-        
-        if (!success)
-        {
-            NSLog(@"%@", result);
-            return;
-        }
-        
-        [self setVenues:result[@"response"][@"venues"]];
-        [self.tableView reloadData];
-    }];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"%@", error);
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Venue *venue = self.venues[indexPath.row];
+    VenueDetailViewController *venueDetailViewController = (VenueDetailViewController *)segue.destinationViewController;
+    [venueDetailViewController setVenue:venue];
 }
 
 @end
