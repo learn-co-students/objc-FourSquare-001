@@ -24,7 +24,7 @@
                                 </state>
                                 <connections>
                                     <action selector="search:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1jU-BF-ZPs"/>
-                                    <segue destination="GKB-Rx-ICS" kind="push" id="h4U-gU-1F5"/>
+                                    <segue destination="GKB-Rx-ICS" kind="push" identifier="" id="h4U-gU-1F5"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="chinese" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxO-14-Wrl">
@@ -117,7 +117,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Lkf-jH-ePF" kind="push" id="x2T-WX-nWs"/>
+                                    <segue destination="Lkf-jH-ePF" kind="push" identifier="" id="x2T-WX-nWs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

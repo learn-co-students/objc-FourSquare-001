@@ -16,9 +16,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *distance;
 @property (nonatomic, strong) IBOutlet UITextField *latitude;
 @property (nonatomic, strong) IBOutlet UITextField *longitude;
-@property (nonatomic, strong) NSArray <Venue *> *venues;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-- (IBAction)search:(UIButton *)sender;
 @end
 
 @implementation SearchQueryViewController
@@ -62,21 +60,18 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    VenuesTableViewController *venuesTableViewController = (VenuesTableViewController *)segue.destinationViewController;
-    [venuesTableViewController setVenues:self.venues];
-}
-
-- (IBAction)search:(UIButton *)sender
-{
-    [sender setTitle:@"Searching..." forState:UIControlStateDisabled];
-    [sender setEnabled:NO];
+    if ([sender isKindOfClass:[UIButton class]])
+    {
+        [sender setTitle:@"Searching..." forState:UIControlStateDisabled];
+        [sender setEnabled:NO];
+    }
     NSNumber *latitude = [NSNumber numberWithFloat:self.latitude.text.floatValue];
     NSNumber *longitude = [NSNumber numberWithFloat:self.longitude.text.floatValue];
     NSString *query = self.search.text;
     NSNumber *radius = [NSNumber numberWithFloat:self.distance.text.floatValue];
     [Foursquare2 venueSearchNearByLatitude:latitude longitude:longitude query:query limit:@100 intent:intentBrowse radius:radius categoryId:nil callback:^(BOOL success, id result) {
         
-        [sender setEnabled:YES];
+        if ([sender isKindOfClass:[UIButton class]]) [sender setEnabled:YES];
         
         if (!success)
         {
@@ -84,8 +79,8 @@
             return;
         }
         
-        [self setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
-        [self performSegueWithIdentifier:@"segueVenues" sender:self];
+        VenuesTableViewController *venuesTableViewController = (VenuesTableViewController *)segue.destinationViewController;
+        [venuesTableViewController setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
     }];
 }
 
