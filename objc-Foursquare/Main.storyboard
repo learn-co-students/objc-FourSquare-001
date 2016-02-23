@@ -189,11 +189,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Name of venue" id="jFK-gA-hUU"/>
                     <connections>
+                        <outlet property="address" destination="hxv-Xx-0Um" id="FDD-tL-6AJ"/>
                         <outlet property="addressLabel" destination="hxv-Xx-0Um" id="5ze-40-dOe"/>
+                        <outlet property="city" destination="2YB-Gy-nz4" id="tjt-BT-BUa"/>
                         <outlet property="cityLabel" destination="2YB-Gy-nz4" id="IC3-6c-zXC"/>
+                        <outlet property="crossStreet" destination="zMX-pd-cTl" id="PbW-qd-8Xm"/>
                         <outlet property="crossStreetLabel" destination="zMX-pd-cTl" id="4Nn-uV-dhA"/>
+                        <outlet property="postalCode" destination="EK2-GK-oMP" id="oaZ-wd-sdn"/>
                         <outlet property="postalCodeLabel" destination="EK2-GK-oMP" id="IDF-ix-fuP"/>
+                        <outlet property="state" destination="Fwy-4y-z3M" id="nEp-QR-lIk"/>
                         <outlet property="stateLabel" destination="Fwy-4y-z3M" id="2u0-vE-6Ci"/>
+                        <outlet property="venueID" destination="qcO-ef-Zvb" id="AG1-kj-ms9"/>
                         <outlet property="venueIDLabel" destination="qcO-ef-Zvb" id="FWh-zK-pId"/>
                     </connections>
                 </viewController>
