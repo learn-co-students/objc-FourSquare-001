@@ -23,6 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="search:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1jU-BF-ZPs"/>
                                     <segue destination="GKB-Rx-ICS" kind="push" id="h4U-gU-1F5"/>
                                 </connections>
                             </button>
@@ -75,9 +76,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Find some cool places" id="bbn-WB-WJc"/>
                     <connections>
+                        <outlet property="distance" destination="mOK-mn-y4Q" id="KxX-tr-bIw"/>
+                        <outlet property="latitude" destination="r8g-lw-7aJ" id="Tvv-ne-Sir"/>
                         <outlet property="latitudeField" destination="r8g-lw-7aJ" id="dTR-FA-meZ"/>
+                        <outlet property="longitude" destination="Q2X-QC-eIO" id="MhL-h0-9lB"/>
                         <outlet property="longitudeField" destination="Q2X-QC-eIO" id="1us-Xh-REe"/>
                         <outlet property="queryField" destination="WxO-14-Wrl" id="3GZ-Qo-gdC"/>
+                        <outlet property="search" destination="WxO-14-Wrl" id="xkr-nG-sx0"/>
                         <outlet property="searchButton" destination="iEs-cy-rr7" id="CtI-g8-jID"/>
                         <outlet property="willingnessToTravelField" destination="mOK-mn-y4Q" id="s2l-wk-9pD"/>
                     </connections>
