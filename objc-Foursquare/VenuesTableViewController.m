@@ -70,9 +70,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NSDictionary *venue = self.venues[indexPath.row];
-    [cell.textLabel setText:venue[@"name"]];
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@", venue[@"stats"][@"checkinsCount"]]];
+    Venue *venue = self.venues[indexPath.row];
+    [cell.textLabel setText:venue.name];
     
     return cell;
 }
@@ -132,7 +131,7 @@
             return;
         }
         
-        [self setVenues:result[@"response"][@"venues"]];
+        [self setVenues:[Venue venuesWithVenues:result[@"response"][@"venues"]]];
         [self.tableView reloadData];
     }];
 }
