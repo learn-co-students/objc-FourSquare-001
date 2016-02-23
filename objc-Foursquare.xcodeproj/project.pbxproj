@@ -20,11 +20,12 @@
 		31FE54E119F694E4002BA561 /* VenuesTableViewControllerAdvancedSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE54D919F694E4002BA561 /* VenuesTableViewControllerAdvancedSpec.m */; };
 		31FE54E219F694E4002BA561 /* VenuesTableViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE54DA19F694E4002BA561 /* VenuesTableViewControllerSpec.m */; };
 		31FE550719F6A171002BA561 /* foursquareResultsStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 31FE54D319F694E4002BA561 /* foursquareResultsStub.json */; };
-		31FE550919F6F6F4002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550819F6F6F4002BA561 /* Main.storyboard */; };
+		31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550A19F6F81A002BA561 /* Main.storyboard */; };
 		7D136A3E1C7BED0000279D15 /* FISPrivateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A3D1C7BED0000279D15 /* FISPrivateInfo.m */; };
 		7D136A411C7BEEB400279D15 /* VenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A401C7BEEB400279D15 /* VenuesTableViewController.m */; };
 		7D136A431C7BEF5B00279D15 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D136A421C7BEF5B00279D15 /* CoreLocation.framework */; };
-		31FE550B19F6F81A002BA561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE550A19F6F81A002BA561 /* Main.storyboard */; };
+		7D136A461C7CA69F00279D15 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A451C7CA69F00279D15 /* Venue.m */; };
+		7D136A491C7CA6DE00279D15 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D136A481C7CA6DE00279D15 /* Location.m */; };
 		B58A562F143740C205F1E545 /* libPods-objc-Foursquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */; };
 		F955FE3B74C32A86A302243C /* libPods-objc-FoursquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,10 @@
 		7D136A3F1C7BEEB400279D15 /* VenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewController.h; sourceTree = "<group>"; };
 		7D136A401C7BEEB400279D15 /* VenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesTableViewController.m; sourceTree = "<group>"; };
 		7D136A421C7BEF5B00279D15 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7D136A441C7CA69F00279D15 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		7D136A451C7CA69F00279D15 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		7D136A471C7CA6DE00279D15 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		7D136A481C7CA6DE00279D15 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		88AFBAB719BC3CDA21C4E0F3 /* libPods-objc-Foursquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-Foursquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8E1DAB8113FDF8A379979E /* Pods-objc-FoursquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objc-FoursquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-objc-FoursquareTests/Pods-objc-FoursquareTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC5B7F337D69B31D5C8090FC /* libPods-objc-FoursquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-objc-FoursquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +127,10 @@
 				7D136A3D1C7BED0000279D15 /* FISPrivateInfo.m */,
 				7D136A3F1C7BEEB400279D15 /* VenuesTableViewController.h */,
 				7D136A401C7BEEB400279D15 /* VenuesTableViewController.m */,
-				31FE550819F6F6F4002BA561 /* Main.storyboard */,
+				7D136A441C7CA69F00279D15 /* Venue.h */,
+				7D136A451C7CA69F00279D15 /* Venue.m */,
+				7D136A471C7CA6DE00279D15 /* Location.h */,
+				7D136A481C7CA6DE00279D15 /* Location.m */,
 				31D1117119F5BAE3003E7B45 /* Images.xcassets */,
 				31D1117319F5BAE3003E7B45 /* LaunchScreen.xib */,
 				31D1116419F5BAE3003E7B45 /* Supporting Files */,
@@ -389,6 +397,8 @@
 				7D136A411C7BEEB400279D15 /* VenuesTableViewController.m in Sources */,
 				31D1116A19F5BAE3003E7B45 /* AppDelegate.m in Sources */,
 				31D1116719F5BAE3003E7B45 /* main.m in Sources */,
+				7D136A461C7CA69F00279D15 /* Venue.m in Sources */,
+				7D136A491C7CA6DE00279D15 /* Location.m in Sources */,
 				7D136A3E1C7BED0000279D15 /* FISPrivateInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
