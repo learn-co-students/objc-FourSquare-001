@@ -1,6 +1,6 @@
 
 
-# Cocoapods and Blocks
+# CocoaPods and Blocks
 
 
 ## Goals 
@@ -11,7 +11,7 @@
 
 ##Project Overview - Basic version
 
-Create an app that displays the foursquare venue name and checkinsCount.
+Create an app that displays the Foursquare venue name and checkinsCount.
 
 ## CocoaPods  
 
@@ -25,16 +25,16 @@ CocoPods are awesome! They allow us to add third-party frameworks to our project
     ```
     * Run `pod install` in your terminal to verify that the correct version is installed.
 
-2. Since you'll be using Cocoapods, you'll need to work in the xcworkspace from now on so that the pods are visible to your project.
+2. Since you'll be using CocoaPods, you'll need to work in the xcworkspace from now on so that the pods are visible to your project.
 
-## FourSquare API Configuration
+## Foursquare API Configuration
 
 - Client ID: `4CYIWCSVTU40F1RGDRXIYS1ATQ4TQ2GGXWTRMNW5M3VYPCDW`
 - Client Secret: `ZYS0F3CJEFAQVXUWOYW5Y4VZYAT3IR0XLM5QZSW4NRZKVRQ4`
 - callbackURL: `testapp123://foursquare`
 - Add the following method to your App Delegate. 
 
-Or, feel free to create your own foursquare account (if you don't already have one) and register your application for on the FourSquare developer website. The callbackURL does not matter (it can really be anything for now), but you will need to get a clientID and clientSecret.
+Or, feel free to create your own Foursquare account (if you don't already have one) and register your application for on the Foursquare developer website. The callbackURL does not matter (it can really be anything for now), but you will need to get a clientID and clientSecret.
 
 ```objc 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
@@ -57,7 +57,7 @@ and the following code to your didFinishLaunchingWithOptions: method
 }
 ``` 
 
-At this point, our App is configured to make authenticated API calls to the FourSquare API.  There is a ton of magic going on under the hood to allow us to set up communications with the API in just a couple lines of code, but that is the wonderment of CocoaPods; CocoaPods allow complex concepts to be abstracted into simple wrapper classes.  From here on out, we can simply import Foursquare2.h into our classes and use the Foursquare2 cocoapods' methods to make requests from the API.
+At this point, our App is configured to make authenticated API calls to the Foursquare API.  There is a ton of magic going on under the hood to allow us to set up communications with the API in just a couple lines of code, but that is the wonderment of CocoaPods; CocoaPods allow complex concepts to be abstracted into simple wrapper classes.  From here on out, we can simply import Foursquare2.h into our classes and use the Foursquare2 cocoapods' methods to make requests from the API.
 
 
 ```objc 
@@ -73,7 +73,7 @@ At this point, our App is configured to make authenticated API calls to the Four
 
 ```
 
-The FourSquare v2 CocoaPod uses class methods with block callbacks.  Here is an example usage of the previous method.  
+The Foursquare v2 CocoaPod uses class methods with block callbacks.  Here is an example usage of the previous method.  
 
 ```objc
 
@@ -166,14 +166,14 @@ Here are the properties and methods for your `Location` class.
 
 ```objc
 
-@property (nonatomic, strong)NSNumber *lat; 
-@property (nonatomic, strong)NSNumber *lng;
-@property (nonatomic,strong)NSString *address;
-@property (nonatomic,strong) NSString *city;
-@property (nonatomic,strong) NSString *state;
-@property (nonatomic,strong) NSString *postalCode;
-@property (nonatomic,strong) NSString *country;
-@property (nonatomic,strong)NSString *crossStreet;
+@property (nonatomic, strong) NSNumber *lat; 
+@property (nonatomic, strong) NSNumber *lng;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *postalCode;
+@property (nonatomic, strong) NSString *country;
+@property (nonatomic, strong) NSString *crossStreet;
 
 
 - (instancetype)initWithlat:(NSNumber *)lat 
@@ -193,7 +193,7 @@ Here are the properties and methods for your `Location` class.
 
 ```
 
-Taking another look at our FourSquare method from before, let's consider how we'll go about constructing FourSquare objects from our API Call. 
+Taking another look at our Foursquare method from before, let's consider how we'll go about constructing Foursquare objects from our API Call. 
 
 ```objc
 
@@ -249,7 +249,7 @@ Displays the tapped Venue's details.
 ## Extra Credit
 * Attempt to build in the additional methods below to further streamline your view controller and pass the baton along to the Venue and Location objects.
 
-* Check out SVProgress HUD.  Optimally, you'll show a ProgressHUD as soon as your API call begins and dismiss the HUD after the call completes.  You can install SVProgressHUD via CocoaPods.  
+* Check out SVProgressHUD.  Optimally, you'll show an SVProgressHUD as soon as your API call begins and dismiss the HUD after the call completes.  You can install SVProgressHUD via CocoaPods.  
 
 * Check out `CLLocation` and [check this StackOverflow out to see how to implement current location in iOS8](http://stackoverflow.com/questions/26134641/how-to-get-current-location-lat-long-in-ios-8)! Get the user's current location instead of asking them for one. This is outside of the scope of our regular lessons, but it may come in handy someday!
 
@@ -268,7 +268,7 @@ Displays the tapped Venue's details.
  
   - [CocoaPods getting started](http://guides.cocoapods.org/using/getting-started.html#getting-started)
   - [CocoaPods Podfile configuration](http://guides.cocoapods.org/using/the-podfile.html)
-  - [FourSquare CocoaPod Github page](https://github.com/Constantine-Fry/Foursquare-API-v2)
-  - [FourSquare API Search Documentation](https://developer.foursquare.com/docs/venues/search)
+  - [Foursquare CocoaPod Github page](https://github.com/Constantine-Fry/Foursquare-API-v2)
+  - [Foursquare API Search Documentation](https://developer.foursquare.com/docs/venues/search)
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-FourSquare' title='Cocoapods and Blocks'>Cocoapods and Blocks</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-FourSquare'>(optional) Foursquare</a> on Learn.co and start learning to code for free.</p>
