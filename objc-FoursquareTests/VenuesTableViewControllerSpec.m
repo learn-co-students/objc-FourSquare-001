@@ -35,7 +35,7 @@ describe(@"VenuesTableViewController", ^{
         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
         appDelegate.window.rootViewController = venuesTVC;
       
-        NSString *test = OHPathForFileInBundle(@"foursquareResultsStub.json", nil);
+        NSString *test = OHPathForFileInBundle(@"foursquareResultsStub.json", [NSBundle bundleForClass:[self class]]);
         
         NSData * responseData = [NSData dataWithContentsOfFile:test];
         NSError * error=nil;
